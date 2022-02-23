@@ -7,7 +7,7 @@ build-docker:
     - docker info
   stage: build
   script:
-  - echo "ola mundo"
+  - docker build -t minha-imagem .
   
 
 
