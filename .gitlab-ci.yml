@@ -1,5 +1,12 @@
 image: docker:stable
 
+stages:
+- pre-build
+- build
+- test
+- deploy 
+
+
 build-docker:
   services:
     - docker:dind
@@ -7,14 +14,20 @@ build-docker:
     - docker info
     - docker login -u bastcord -p @Mz01098Docker!
 
-  stage: build
+  stage: pre-build
   script:
   - docker build -t minha-imagem .
   - docker tag minha-imagem bastcord/prod:1.0
   - docker push bastcord/prod:1.0
   
-
-
+build-project:
+  stage: build
+  tags:
+  - executor-tarefas
+  dependencies:
+  - build-docker
+  script:
+  - echo "Runner"
 
 
 
