@@ -5,9 +5,13 @@ build-docker:
     - docker:dind
   before_script:
     - docker info
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD
+
   stage: build
   script:
   - docker build -t minha-imagem .
+  - docker tag minha-imagem bastcord/prod:1.0
+  - docker push bastcord/minha-imagem:1.0
   
 
 
