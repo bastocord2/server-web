@@ -16,7 +16,8 @@ build-docker:
 
   stage: pre-build
   tags:
-    - gitlab-org-docker
+    - executor-tarefas
+    #- gitlab-org-docker
   script:
   - docker build -t minha-imagem .
   - docker tag minha-imagem bastcord/prod:1.0
