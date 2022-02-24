@@ -46,7 +46,7 @@ build-project:
   #- build-docker
 
   tags:
-  #- executor-runner
+  - executor-01
   - build-docker
   script:
   - python manage.py makemigrations
