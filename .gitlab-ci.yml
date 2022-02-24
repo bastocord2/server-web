@@ -20,8 +20,8 @@ build-docker:
     #- executor-01
     #- gitlab-org-docker
   script:
+  - docker build -t minha-imagem .
+  - docker tag minha-imagem bastcord/prod:1.0
+  - docker push bastcord/prod:1.0
   - echo " vlw Guilherme!!!!"
-  #- docker build -t minha-imagem .
-  #- docker tag minha-imagem bastcord/prod:1.0
-  #- docker push bastcord/prod:1.0
 
