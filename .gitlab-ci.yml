@@ -16,7 +16,8 @@ build-docker:
 
   stage: pre-build
   tags:
-    - executor-01
+    - gitlab-org-docker
+    #- executor-01
     #- gitlab-org-docker
   script:
   - echo "passou!!!!"
