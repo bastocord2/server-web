@@ -19,15 +19,38 @@ build-docker:
   - docker build -t minha-imagem .
   - docker tag minha-imagem bastcord/prod:1.0
   - docker push bastcord/prod:1.0
-  
+
+
 build-project:
+  image: bastcord/prod:1.0
+  #retry: 2 
+  services:
+  - docker:dind
+  - mysql:5.7
+  variables:
+    MYSQL_USER: $DB_USER 
+    MYSQL_PASSWORD: $DB_PASSWORD 
+    MYSQL_DATABASE: $DB_DATABASE 
+    MYSQL_ROOT_PASSWORD: $DB_ROOT_PASSWORD 
+
+    DB_NAME: $DB_DATABASE
+    DB_USER: $DB_USER
+    DB_PASSWORD: $DB_PASSWORD
+    DB_PORT: '3306'
+    DB_HOST: 'mysql'
+    SECRET_KEY: $SECRET_KEY
+
   stage: build
+    
+  #dependencies:
+  #- build-docker
+
   tags:
   - executor-tarefas
-  dependencies:
   - build-docker
   script:
-  - echo "Runner"
+  - python manage.py makemigrations
+  - python manage.py migrate
 
 
 
