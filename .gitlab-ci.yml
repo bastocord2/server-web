@@ -46,7 +46,7 @@ build-project:
   #- build-docker
 
   tags:
-  - executor-01
+  - gitlab-org-docker
   - build-docker
   script:
   - python manage.py makemigrations
