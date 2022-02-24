@@ -16,7 +16,7 @@ build-docker:
 
   stage: pre-build
   tags:
-    - executor-tarefas
+    - executor-01
     #- gitlab-org-docker
   script:
   - docker build -t minha-imagem .
