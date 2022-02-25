@@ -29,19 +29,19 @@ build-project:
   #retry: 2 
   services:
   - docker:dind
- # - mysql:5.7
-  #variables:
-    #MYSQL_USER: $DB_USER 
-    #MYSQL_PASSWORD: $DB_PASSWORD 
-   # MYSQL_DATABASE: $DB_DATABASE 
-    #MYSQL_ROOT_PASSWORD: $DB_ROOT_PASSWORD 
+  - mysql:5.7
+  variables:
+    MYSQL_USER: $DB_USER 
+    MYSQL_PASSWORD: $DB_PASSWORD 
+    MYSQL_DATABASE: $DB_DATABASE 
+    MYSQL_ROOT_PASSWORD: $DB_ROOT_PASSWORD 
 
-  #  DB_NAME: $DB_DATABASE
-  #  DB_USER: $DB_USER
-  #  DB_PASSWORD: $DB_PASSWORD
-  #  DB_PORT: '3306'
-  #  DB_HOST: 'mysql'
-  #  SECRET_KEY: $DB_SECRET_KEY
+    DB_NAME: $DB_DATABASE
+    DB_USER: $DB_USER
+    DB_PASSWORD: $DB_PASSWORD
+    DB_PORT: '3306'
+    DB_HOST: 'mysql'
+    SECRET_KEY: $DB_SECRET_KEY
 
   stage: build
   tags:
