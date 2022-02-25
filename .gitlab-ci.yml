@@ -45,7 +45,8 @@ build-project:
   stage: build
   tags:
   - gitlab-org-docker
-  #- build-docker
+  dependencies:
+  - build-docker
   script:
   - python manage.py makemigrations
   - python manage.py migrate
