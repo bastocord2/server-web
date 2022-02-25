@@ -25,10 +25,10 @@ build-docker:
   - docker push bastcord/prod:1.0
 
 build-project:
-  #image: bastcord/prod:1.0
+  image: bastcord/prod:1.0
   #retry: 2 
-  #services:
- # - docker:dind
+  services:
+  - docker:dind
  # - mysql:5.7
   #variables:
     #MYSQL_USER: $DB_USER 
