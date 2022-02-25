@@ -8,8 +8,8 @@ DEBUG=True
 # Database
 DB_NAME = "todo_dev"
 DB_USER = "devops_dev"
-DB_PASSWORD = "mestre"
-DB_HOST = "db"
+DB_PASSWORD = "aaw6e7r834g3g383ab1b435"
+DB_HOST = "mysql"
 DB_PORT = "3309"
 DB_DATABASE = "my_db"
 DB_ROOT_PASSWORD = "r*5ltfzw-61ksdm4"
