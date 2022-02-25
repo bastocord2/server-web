@@ -49,6 +49,6 @@ build-project:
   script:
   - python manage.py makemigrations
   - python manage.py migrate
-  - echo " passou!!!!"
+  - echo " passou!!!"
 
 
