@@ -40,7 +40,7 @@ build-project:
     DB_PASSWORD: $DB_PASSWORD
     DB_PORT: '3306'
     DB_HOST: 'mysql'
-    SECRET_KEY: $DB_SECRET_KEY
+    SECRET_KEY: 'r*5ltfzw-61ksdm41fuul8+hxs$86yo9%k1%k=(!@=-wv4qtyv'
 
   stage: build
   tags:
