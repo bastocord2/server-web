@@ -17,8 +17,7 @@ build-docker:
   stage: pre-build
   tags:
     - gitlab-org-docker
-    #- executor-01
-    #- gitlab-org-docker
+    
   script:
   - docker build -t minha-imagem .
   - docker tag minha-imagem bastcord/prod:1.0
@@ -48,8 +47,8 @@ build-project:
   - gitlab-org-docker
   #- build-docker
   script:
-  #- python manage.py makemigrations
-  #- python manage.py migrate
+  - python manage.py makemigrations
+  - python manage.py migrate
   - echo " passou!!!!"
 
 
