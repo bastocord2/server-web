@@ -25,7 +25,7 @@ build-docker:
 
 build-project:
   image: bastcord/prod:1.0
-  #retry: 2 
+  retry: 2 
   services:
   - docker:dind
   - mysql:5.7
@@ -39,7 +39,7 @@ build-project:
     DB_USER: $DB_USER
     DB_PASSWORD: $DB_PASSWORD
     DB_PORT: '3306'
-    DB_HOST: 'localhost'
+    DB_HOST: 'mysql'
     SECRET_KEY: $SECRET_KEY
 
   stage: build
