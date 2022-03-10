@@ -52,4 +52,28 @@ build-project:
   - python manage.py migrate
   - echo " passou!!!"
 
+test-project:
+  image: bastcord/prod:1.0
+  stage: test
+  services:
+  - docker:dind
+  - mysql:5.7
+  variables:
+    MYSQL_USER: devops_dev 
+    MYSQL_PASSWORD: mestre5000 
+    MYSQL_DATABASE: todo_dev 
+    MYSQL_ROOT_PASSWORD: senha 
 
+    DB_NAME: 'todo_dev'
+    DB_USER: 'devops_dev'
+    DB_PASSWORD: 'mestre5000'
+    DB_PORT: '3306'
+    DB_HOST: 'mysql'
+    SECRET_KEY: 'r*5ltfzw-61ksdm41fuul8+hxs$86yo9%k1%k=(!@=-wv4qtyv'
+
+  dependencies:
+    - build-project
+  tags:
+  - gitlab-org-docker
+  script:
+  - python -m unittest setup  
